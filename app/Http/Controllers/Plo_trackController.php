@@ -24,66 +24,7 @@ class Plo_trackController extends Controller
 
     public function barchart(Request $request)
     {
-//        $fruit = DB::table('student')->where('dept_code','CSE')->count('student.student_id');
-//        $veg = DB::table('student')->where('dept_code','EEE')->count('dept_code');//->where('dept_code','CSE')
-////        $grains = Student::where('product_type','grains')->get();
-//        $fruit_count = $fruit;
-//        $veg_count = $veg;
-//        //        $fruit_count->tag($fruit_count);
-////        $grains_count = count($grains);
-//
-//        return view('barchart',compact('fruit_count','veg_count'));
-////        return view('barchart',compact('fruit_count'));
-///
 
-//        $cos = DB::table('plo')
-//
-//            ->select('question_bank.co_id')
-//            ->distinct()
-//            ->join('student', 'student.dept_code', '=', 'plo.dept_code')
-//            ->join('co', 'co.plo_id', '=', 'plo.plo_id')
-//            ->join('question_bank', 'question_bank.co_id', '=', 'co.co_id')
-//
-//
-//            ->where([['student.student_id', '=', '1830831'], ['plo.plo_id', '=', '121']])
-//            ->get();
-//
-//        $plo1Tot = DB::table('question_bank')
-//            ->whereIn('co_id', [2,3])
-//            ->sum('marks');
-
-//PLO achievement views///////////////////////
-
-
-//        $cos = DB::table('plo')
-//            ->select('question_bank.co_id')
-//            ->distinct()
-//            ->join('student', 'student.dept_code', '=', 'plo.dept_code')
-//            ->join('co', 'co.plo_id', '=', 'plo.plo_id')
-//            ->join('question_bank', 'question_bank.co_id', '=', 'co.co_id')
-//
-//            ->where([['student.student_id', '=', '1830841'], ['plo.plo_id', '=', '1234']])
-//            ->get();
-//
-//        $plo1Tot = DB::table('question_bank')
-//            ->whereIn('co_id', $cos->pluck('co_id')->toArray())
-//            ->sum('marks');
-//
-//        $plo1Q = DB::table('question_bank')
-//            ->whereIn('co_id', $cos->pluck('co_id')->toArray())
-//            ->select('question_id');
-//
-//        $plo1Obt = DB::table('answer')
-//            ->whereIn('question_id', $plo1Q->pluck('question_id')->toArray())
-//            ->sum('marks_obtained');
-//
-////        $ploAll=($plo1Obt/$plo1Tot)*100;
-//        if(empty($plo1Tot)) {
-//            $plo1Percent = 0;
-//        }
-//        else{
-//            $plo1Percent = ($plo1Obt / $plo1Tot) * 100;
-//        }
         if (empty($request->get('student_lookup'))) {
             return redirect()->back()->with('message', 'Please enter student ID');
         } else {
@@ -480,54 +421,13 @@ class Plo_trackController extends Controller
 
 
             //PLO achievement views///////////////////////
-
-
-//        return view('PloViewbarchart', compact('plo1Percent'));
             return view('PloViewbarchart', compact('plo1Percent', 'plo2Percent', 'plo3Percent', 'plo4Percent', 'plo5Percent', 'plo6Percent', 'plo7Percent', 'plo8Percent', 'plo9Percent', 'plo10Percent', 'plo11Percent', 'plo12Percent', 'plo13Percent'));
 
 
         }
 
 
-//
-//    public function show(Plo_track $plo_track)
-//    {
-//        //
-//    }
 
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  \App\Models\Plo_track  $plo_track
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function edit(Plo_track $plo_track)
-//    {
-//        //
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @param  \App\Models\Plo_track  $plo_track
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(Request $request, Plo_track $plo_track)
-//    {
-//        //
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  \App\Models\Plo_track  $plo_track
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function destroy(Plo_track $plo_track)
-//    {
-//        //
-//    }
     }
 
 }
