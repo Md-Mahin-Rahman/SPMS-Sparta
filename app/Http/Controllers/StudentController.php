@@ -13,6 +13,27 @@ class StudentController extends Controller
         $this->middleware('auth');
     }
     
+    public function screate()
+    {
+        return view('studentStore');
+    }
+
+    public function studentStore( Request  $request)
+    {
+        $name1 = $request->input('student_id');
+
+        $name2 = $request->input('name');
+        $name3 = $request->input('dept_code');
+
+
+
+        DB::table('plo')->insert([
+            'student_id' => $name1, 'name' => $name2, 'dept_code' => $name3
+        ]);
+
+        return redirect()->back()->with('message', 'Data is submitted');
+    }
+    
     public function showAll(Request $request)
     {
 
