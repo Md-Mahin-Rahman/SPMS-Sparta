@@ -33,3 +33,6 @@ Route::get('/create/co', [App\Http\Controllers\COMapController::class, 'createCO
 Route::post('/department/show', [App\Http\Controllers\DepartmentController::class, 'show'])->name('department.show');
 Route::post('/ploAchievement/show', [App\Http\Controllers\Plo_trackController::class, 'show'])->name('plo_track.show');
 Route::get('/overall/showAll', [App\Http\Controllers\StudentController::class, 'showAll'])->name('overall.showAll');
+
+Route::get('/performance/bcreate', [App\Http\Controllers\PerformanceController::class, 'bcreate'])->name('performance.bcreate');
+Route::post('/performance/ploStore', [App\Http\Controllers\PerformanceController::class, 'ploStore'])->name('performance.ploStore');
