@@ -36,3 +36,9 @@ Route::get('/overall/showAll', [App\Http\Controllers\StudentController::class, '
 
 Route::get('/performance/bcreate', [App\Http\Controllers\PerformanceController::class, 'bcreate'])->name('performance.bcreate');
 Route::post('/performance/ploStore', [App\Http\Controllers\PerformanceController::class, 'ploStore'])->name('performance.ploStore');
+
+Route::get('/student/screate', [App\Http\Controllers\StudentController::class, 'screate'])->name('student.screate');
+Route::post('/student/store', [App\Http\Controllers\StudentController::class, 'studentStore'])->name('student.studentStore');
+
+Route::get('/question/qcreate', [App\Http\Controllers\PerformanceController::class, 'qcreate'])->name('question.qcreate');
+Route::post('/question/store', [App\Http\Controllers\PerformanceController::class, 'questionStore'])->name('question.questionStore');
